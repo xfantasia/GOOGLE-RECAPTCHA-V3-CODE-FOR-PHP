@@ -1,0 +1,46 @@
+
+<html>
+  
+  <head> 
+    <title> SITE TITLE </title>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    
+    <script src="https://www.google.com/recaptcha/api.js?render=RECAPTCHA_SITE_KEY_HERE"></script>
+    
+  </head>
+  
+  
+  <body>
+
+            <form action="recaptcha_validation.php" method="post" name="contact-form" id="contact-form">
+
+              <input type="hidden" id="g-token" name="g-token" />
+
+                  <input type="text"  name="name" required>
+              
+                  <input type="text"  name="email" required>
+
+                  <button id="submit_contact" type="submit" name="submit_contact">SEND</button>
+ 
+              </form>
+
+
+              <script>
+                  grecaptcha.ready(function() {
+                      grecaptcha.execute('6LduiOQeAAAAAP-vPKwbdDfvpA3XsBxcK-nik4vN', {action: 'contact_save_message_data'}).then(function(token) {
+                      console.log(token);
+                         document.getElementById("g-token").value = token;
+                      });
+                  });
+              </script>
+  </body>
+  
+</html>
+
+
+
+        
