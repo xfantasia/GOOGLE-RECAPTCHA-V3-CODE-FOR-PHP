@@ -17,7 +17,7 @@
 	$context  = stream_context_create($options);
 	$result = file_get_contents($url, false, $context);
 	$response = json_decode($result);
-	if($response->success)
+	if($response->success ==1)
 	{
 		//echo '<center><h1>Validation Success!</h1></center>';
     		//---YOUR ACTION CONTINUES HERE---//
