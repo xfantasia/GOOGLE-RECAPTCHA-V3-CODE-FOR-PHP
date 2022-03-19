@@ -31,7 +31,7 @@
 
               <script>
                   grecaptcha.ready(function() {
-                      grecaptcha.execute('6LduiOQeAAAAAP-vPKwbdDfvpA3XsBxcK-nik4vN', {action: 'recaptcha_validation'}).then(function(token) {
+                      grecaptcha.execute('RECAPTCHA_SITE_KEY_HERE', {action: 'recaptcha_validation'}).then(function(token) {
                       console.log(token);
                          document.getElementById("g-token").value = token;
                       });
